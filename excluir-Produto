@@ -1,0 +1,11 @@
+def excluir_produto():
+    print("\n--- EXCLUSÃO DE PRODUTO ---")
+    nome = input("Digite o nome do produto a ser excluído: ")
+
+    for produto in produtos:
+        if produto["nome"].lower() == nome.lower():
+            produtos.remove(produto)
+            print("Produto removido com sucesso!")
+            return
+
+    print("Produto não encontrado!")
