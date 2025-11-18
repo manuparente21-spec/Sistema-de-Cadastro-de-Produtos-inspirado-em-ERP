@@ -1,0 +1,27 @@
+
+produtos = []  # Lista que armazenará todos os produtos
+
+
+def cadastrar_produto():
+    print("\n--- CADASTRO DE PRODUTO ---")
+    nome = input("Nome do produto: ")
+    categoria = input("Categoria: ")
+
+    # Validação para evitar erro em preço e quantidade
+    try:
+        preco = float(input("Preço: R$ "))
+        quantidade = int(input("Quantidade inicial: "))
+    except ValueError:
+        print("Erro: Preço ou quantidade inválidos!")
+        return
+
+    # Criação do dicionário que representa o produto
+    produto = {
+        "nome": nome,
+        "categoria": categoria,
+        "preco": preco,
+        "quantidade": quantidade
+    }
+
+    produtos.append(produto)
+    print("Produto cadastrado com sucesso!")
